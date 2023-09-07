@@ -16,6 +16,15 @@
 
 using namespace Zunker;                        // aus KM_Level_A.h
 
+float tanLocal(double x) {
+    return x + x * x * x / 3 + (2 * x * x * x * x * x) / 15;
+}
+
+float absLocal(double x) {
+    return x > 0 ? x : -x;
+}
+
+
 /******************************************************** Konstruktoren / Destruktor ********************************************************/
 C_KM_Level_A::C_KM_Level_A(C_KM_GlobalObjects* KM_GlobalObjects)
 {
@@ -106,7 +115,13 @@ C_KM_Level_A::C_KM_Level_A(C_KM_GlobalObjects* KM_GlobalObjects)
     this->correctedCounter = 0;
     this->rawCounter = 0;
 
-    this->angleController = PIDController(1, 0, 0.2, 0.001, -1, -1);
+    this->motorSetAcc = 0;
+    this->motorVel = 0;
+    this->motorPos = 0;
+
+    this->enablePID = false;
+
+    this->angleController = PIDController(2.5, 0, 60, 0.001, -1, 1);
 
     // Kind-Objekt-Instanziierung 
     this->KM_Level_B = new C_KM_Level_B * [Level_B_Anzahl];
@@ -279,9 +294,11 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
     bool btn2StateNew = this->Taster_2->GetDigitalIn();
     bool btn3StateNew = this->Taster_3->GetDigitalIn();
 
+    static bool resetted = false;
+
     // btn 0 down
     if (btn0StateNew && !btn0State) {
-        if (!this->ServoMotor->IsServoMotorEnabled()) {
+        if (!this->ServoMotor->IsServoMotorEnabled() && resetted) {
             this->ServoMotor->EnableServoMotor();
             this->angleController.reset();
         }
@@ -301,6 +318,10 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
     if (btn3StateNew && !btn3State) {
         motorSpeed = 0;
         this->correctedCounter = 0;
+        this->motorSetAcc = 0;
+        this->motorVel = 0;
+        this->motorPos = 0;
+        resetted = true;
     }
 
     this->Lineargeber->GetCounterValue();
@@ -325,25 +346,56 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
 
     return (false);
 }
+
 // Logic
 Boolean        C_KM_Level_A::SM_Thread_3(void)
 {
-    if (this->ServoMotor->IsServoMotorEnabled() && encoderRads < PI / 16.0 && encoderRads > -PI / 16.0) {
-        Led_1->SetDigitalOut();
-
+    float maxControllAngle = PI / 10.0;
+    if (!this->enablePID) {
+        maxControllAngle = PI / 20.0;
     }
-    else {
-        Led_1->ResetDigitalOut();
+    if(encoderRads < maxControllAngle && encoderRads > -maxControllAngle) {
+        startPID();
+    } else {
+        stopPID();
+     }
+    if (!this->ServoMotor->IsServoMotorEnabled()) {
+        stopPID();
     }
+    
+    
     return (false);
 }
+// pid
 Boolean        C_KM_Level_A::SM_Thread_4(void)
 {
+    if (this->enablePID) {
+        double angleAcceleration = this->angleController.update(this->encoderRads);
+        this->motorSetAcc = angleAcceleration * (absLocal(tanLocal(this->encoderRads)) + 1);
+    }
     return (false);
 }
+// motor
 Boolean        C_KM_Level_A::SM_Thread_5(void)
 {
+    this->motorVel += this->motorSetAcc;
+    this->ServoMotor->SetServoMotorStellGeschwindigkeit(this->motorVel);
     return (false);
+}
+
+void C_KM_Level_A::stopPID() {
+    this->enablePID = false;
+    this->motorVel = 0;
+    this->motorSetAcc = 0;
+}
+
+void C_KM_Level_A::startPID() {
+    if (this->enablePID) return;
+    this->angleController.reset();
+    this->motorSetAcc = 0;
+    this->motorVel = 0;
+    this->motorPos = 0;
+    this->enablePID = true;
 }
 
 /******************************************************* Öffentliche Anwender-Methoden ******************************************************/

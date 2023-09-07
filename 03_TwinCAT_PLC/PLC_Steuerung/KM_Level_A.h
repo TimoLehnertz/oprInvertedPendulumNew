@@ -35,30 +35,34 @@ public:
         this->firstMeasurementTaken = false;
     }
 
-    PIDController(double p, double i, double d, double dt, double minI, double maxI) : p(p), i(i), d(d), dt(dt), minI(minI), maxI(maxI) {
-        reset();
+    PIDController(float p, float i, float d, float dt, float minI, float maxI) : p(p), i(i), d(d), dt(dt), minI(minI), maxI(maxI) {
+        this->setpoint = 0;
+        this->integrator = 0;
+        this->lastMeasurement = 0;
+        this->firstMeasurementTaken = false;
         this->isAngleController = false;
+        reset();
     }
 
     // returns stellwert
-    double update(double measurement) {
+    float update(float measurement) {
         if (!firstMeasurementTaken) {
             this->lastMeasurement = measurement;
             firstMeasurementTaken = true;
         }
-        double error = measurement - this->setpoint;
+        float error = measurement - this->setpoint;
 
-        double pTerm = -error * this->p;
+        float pTerm = error * this->p;
 
         this->integrator += error * this->dt * this->i;
         if (this->integrator > this->maxI) this->integrator = this->maxI;
         if (this->integrator < this->minI) this->integrator = this->minI;
 
-        double dTerm = (measurement - this->lastMeasurement) * this->d;
+        float dTerm = (measurement - this->lastMeasurement) * this->d;
 
-        double lpf = 0.5;
+        float lpf = 0.5;
 
-        this->lastMeasurement = measurement * lpf + lastMeasurement * (1 - lpf);
+        this->lastMeasurement = measurement * lpf + this->lastMeasurement * (1 - lpf);
         return pTerm + this->integrator + dTerm;
     }
 
@@ -69,33 +73,27 @@ public:
         this->firstMeasurementTaken = false;
     }
 
-    void setSetpoint(double setpoint) {
+    void setSetpoint(float setpoint) {
         this->setpoint = setpoint;
     }
 
-    //static double angleFromTo(double from, double to) {
-    //    _sin(1);
-    //    return _atan2(_sin(to - from), _cos(to - from));
-    //}
-
 private:
-    double p;
-    double i;
-    double d;
-    double dt;
-    double minI;
-    double maxI;
+    float p;
+    float i;
+    float d;
+    float dt;
+    float minI;
+    float maxI;
 
-    double setpoint;
+    float setpoint;
 
-    double integrator;
+    float integrator;
 
-    double lastMeasurement;
+    float lastMeasurement;
 
     bool isAngleController;
 
     bool firstMeasurementTaken;
-
 };
 
 namespace Zunker
@@ -190,10 +188,10 @@ namespace Zunker
 
         long linearCounterValue;
 
-        double motorPos;
 
         PIDController angleController;
 
+        double motorPos;
         double motorSetAcc;
         double motorVel;
 
@@ -212,6 +210,9 @@ namespace Zunker
         Boolean    SM_Thread_3(void);
         Boolean    SM_Thread_4(void);
         Boolean    SM_Thread_5(void);
+
+        void stopPID();
+        void startPID();
 
         /******************************************************* Öffentliche Anwender-Methoden ******************************************************/
     public:
