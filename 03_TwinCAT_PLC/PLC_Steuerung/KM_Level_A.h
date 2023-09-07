@@ -182,18 +182,30 @@ namespace Zunker
         // Drehgeber pendel
         long correctedCounter; // clock wise
         long rawCounter;
-        double encoderRads;
+        float encoderRads;
+        float encoderRadsSpeed;
+
+        float lastPendulumDeflectionRads;
 
         bool enablePID;
 
-        long linearCounterValue;
+        float linearCounterValue;
 
 
         PIDController angleController;
+        PIDController positionController;
+        PIDController resolverPositionController;
 
-        double motorPos;
-        double motorSetAcc;
-        double motorVel;
+        float motorPos;
+        float motorSetAcc;
+        float motorVel;
+        
+        float motorDesPos;
+
+        float motorResolverOffset;
+
+        bool swingUpActive;
+
 
         /**************************************************** Öffentliche Anwender-Attribute ********************************************************/
     public:
