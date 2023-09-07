@@ -1,0 +1,257 @@
+  My02WinformsGUI.frm_UM_Level_A0.resources - Embedded, ContainedInManifestFile, 
+  My02WinformsGUI.frm_UM_Level_A1.resources - Embedded, ContainedInManifestFile, 
+  My02WinformsGUI.frm_UM_Level_B.resources - Embedded, ContainedInManifestFile, 
+  My02WinformsGUI.frm_UM_Level_C.resources - Embedded, ContainedInManifestFile, 
+  My02WinformsGUI.frm_UM_Main.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly 02_Winforms_GUI, Version=0.0.*, Culture=Invariante Sprache (Invariantes Land): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly TwinCAT.Ads, Version=4.3.0.0, Culture=neutral, PublicKeyToken=180016cd49e5e8c3: 
+	hash=None, flags=None
+Class Zunker.C_frm_Eingabe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    fkt_openEingabe_managed(String, ValueType UInt64 IsBoxed, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Int64 IsBoxed, Int64, Int64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType UInt32 IsBoxed, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Int32 IsBoxed, Int32, Int32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType UInt16 IsBoxed, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Int16 IsBoxed, Int16, Int16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Byte IsBoxed, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Boolean IsBoxed, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Double IsBoxed, Double, Double, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, ValueType Single IsBoxed, Single, Single, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, UInt64&, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Int64&, Int64, Int64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, UInt32&, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Int32&, Int32, Int32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, UInt16&, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Int16&, Int16, Int16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Byte&, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Boolean&, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Double&, Double, Double, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_managed(String, Single&, Single, Single, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, ValueType UInt64 IsBoxed, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, ValueType UInt32 IsBoxed, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, ValueType UInt16 IsBoxed, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, ValueType Byte IsBoxed, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, UInt64&, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, UInt32&, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, UInt16&, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_managed(String, Byte&, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt64*, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int64*, Int64, Int64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt32*, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int32*, Int32, Int32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt16*, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int16*, Int16, Int16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Byte*, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Boolean*, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Double*, Double, Double, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Single*, Single, Single, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt64* IsImplicitlyDereferenced, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int64* IsImplicitlyDereferenced, Int64, Int64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt32* IsImplicitlyDereferenced, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int32* IsImplicitlyDereferenced, Int32, Int32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, UInt16* IsImplicitlyDereferenced, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Int16* IsImplicitlyDereferenced, Int16, Int16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Byte* IsImplicitlyDereferenced, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Boolean* IsImplicitlyDereferenced, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Double* IsImplicitlyDereferenced, Double, Double, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_unmanaged(String, Single* IsImplicitlyDereferenced, Single, Single, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt64*, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt32*, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt16*, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, Byte*, Byte, Byte, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt64* IsImplicitlyDereferenced, UInt64, UInt64, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt32* IsImplicitlyDereferenced, UInt32, UInt32, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, UInt16* IsImplicitlyDereferenced, UInt16, UInt16, Color): PrivateScope, Public, HideBySig
+    fkt_openEingabe_hex_unmanaged(String, Byte* IsImplicitlyDereferenced, Byte, Byte, Color): PrivateScope, Public, HideBySig
+Class Zunker.C_UM_Ads: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Add_Message(Int32, Int32, Byte*, UInt32, Byte*, UInt32): PrivateScope, Public, HideBySig
+    Release_Message(Int32, Int32): PrivateScope, Public, HideBySig
+    Transfer_Message(Int32, Int32): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_CSV_ProzessVariablen_Datei: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Boolean IsOpen : Public
+  Methods:
+    Oeffnen(String, UInt32): PrivateScope, Public, HideBySig
+    Schliessen(): PrivateScope, Public, HideBySig
+    Schreibe_Namen(String): PrivateScope, Public, HideBySig
+    Schreibe_Wert(String): PrivateScope, Public, HideBySig
+    Schreibe_Wert(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    Schreibe_Wert(UInt32): PrivateScope, Public, HideBySig
+    Schreibe_Wert(Double): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_CSV_Parameter_Datei: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Boolean IsOpen : Public
+  Methods:
+    Oeffnen(String, Enum_CSV_Access): PrivateScope, Public, HideBySig
+    Schliessen(): PrivateScope, Public, HideBySig
+    Lesen(String&, String&, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Boolean* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Int64* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Int32* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Int16* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, UInt32* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, UInt16* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Byte* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(String&, Double* IsImplicitlyDereferenced, String&): PrivateScope, Public, HideBySig
+    Lesen(Int64&, Int64): PrivateScope, Public, HideBySig
+    Lesen(Int32&, Int32): PrivateScope, Public, HideBySig
+    Lesen(Int16&, Int16): PrivateScope, Public, HideBySig
+    Lesen(UInt32&, UInt32): PrivateScope, Public, HideBySig
+    Lesen(UInt16&, UInt16): PrivateScope, Public, HideBySig
+    Lesen(Byte&, Byte): PrivateScope, Public, HideBySig
+    Lesen(Double&, Double): PrivateScope, Public, HideBySig
+    Lesen(Boolean&): PrivateScope, Public, HideBySig
+    Lesen(Int64&): PrivateScope, Public, HideBySig
+    Lesen(Int32&): PrivateScope, Public, HideBySig
+    Lesen(Int16&): PrivateScope, Public, HideBySig
+    Lesen(UInt32&): PrivateScope, Public, HideBySig
+    Lesen(UInt16&): PrivateScope, Public, HideBySig
+    Lesen(Byte&): PrivateScope, Public, HideBySig
+    Lesen(Double&): PrivateScope, Public, HideBySig
+    Lesen(Int64* IsImplicitlyDereferenced, Int64): PrivateScope, Public, HideBySig
+    Lesen(Int32* IsImplicitlyDereferenced, Int32): PrivateScope, Public, HideBySig
+    Lesen(Int16* IsImplicitlyDereferenced, Int16): PrivateScope, Public, HideBySig
+    Lesen(UInt32* IsImplicitlyDereferenced, UInt32): PrivateScope, Public, HideBySig
+    Lesen(UInt16* IsImplicitlyDereferenced, UInt16): PrivateScope, Public, HideBySig
+    Lesen(Byte* IsImplicitlyDereferenced, Byte): PrivateScope, Public, HideBySig
+    Lesen(Double* IsImplicitlyDereferenced, Double): PrivateScope, Public, HideBySig
+    Lesen(String&): PrivateScope, Public, HideBySig
+    Lesen(Boolean* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(Int64* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(Int32* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(Int16* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(UInt32* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(UInt16* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(Byte* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Lesen(Double* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    Schreiben(String, Int64, Int64, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Int32, Int32, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Int16, Int16, String): PrivateScope, Public, HideBySig
+    Schreiben(String, UInt32, UInt32, String): PrivateScope, Public, HideBySig
+    Schreiben(String, UInt16, UInt16, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Byte, Byte, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Double, Double, String): PrivateScope, Public, HideBySig
+    Schreiben(String, String, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Boolean(HasFieldMarshal), String): PrivateScope, Public, HideBySig
+    Schreiben(String, Int64, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Int32, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Int16, String): PrivateScope, Public, HideBySig
+    Schreiben(String, UInt32, String): PrivateScope, Public, HideBySig
+    Schreiben(String, UInt16, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Byte, String): PrivateScope, Public, HideBySig
+    Schreiben(String, Double, String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_UM_GlobalObjects: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Zunker.C_frm_Eingabe frm_Eingabe : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_UM_Level_C: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(UInt32, Zunker.C_UM_GlobalObjects): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    UInt32 Level_C_Nr : Public
+    Zunker.C_frm_UM_Level_C frm_UM_Level_C : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_frm_UM_Level_C: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Zunker.C_UM_GlobalObjects, Zunker.C_UM_Level_C): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Taktgeber_Tick(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_Schliessen_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_C_Load(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_C_FormClosing(Object, FormClosingEventArgs): PrivateScope, Public, HideBySig
+Class Zunker.C_UM_Level_B: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(UInt32, Zunker.C_UM_GlobalObjects): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    UInt32 Level_B_Nr : Public
+    Zunker.C_UM_Level_C UM_Level_C : Public
+    Zunker.C_frm_UM_Level_B frm_UM_Level_B : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_frm_UM_Level_B: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Zunker.C_UM_GlobalObjects, Zunker.C_UM_Level_B): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Taktgeber_Tick(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_Schliessen_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_B_Load(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_B_FormClosing(Object, FormClosingEventArgs): PrivateScope, Public, HideBySig
+    btn_frm_UM_Level_C_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+Class Zunker.C_UM_Level_A: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Zunker.C_UM_GlobalObjects): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Zunker.C_UM_Level_B[] UM_Level_B : Public
+    Zunker.C_frm_UM_Level_A0 frm_UM_Level_A0 : Public
+    Zunker.C_frm_UM_Level_A1 frm_UM_Level_A1 : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Zunker.C_frm_UM_Level_A0: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Zunker.C_UM_GlobalObjects, Zunker.C_UM_Level_A): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Taktgeber_Tick(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_Schliessen_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_A0_Load(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_A0_FormClosing(Object, FormClosingEventArgs): PrivateScope, Public, HideBySig
+    btn_frm_UM_Level_B0_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_frm_UM_Level_B1_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_frm_UM_Level_B2_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+Class Zunker.C_frm_UM_Level_A1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Zunker.C_UM_GlobalObjects, Zunker.C_UM_Level_A): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Taktgeber_Tick(Object, EventArgs): PrivateScope, Public, HideBySig
+    btn_Schliessen_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_A1_Load(Object, EventArgs): PrivateScope, Public, HideBySig
+    frm_UM_Level_A1_FormClosing(Object, FormClosingEventArgs): PrivateScope, Public, HideBySig
+Class Zunker.C_frm_UM_Main: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Zunker.C_UM_GlobalObjects, Zunker.C_UM_Level_A): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InitializeComponent(): PrivateScope, Public, HideBySig
+Struct Zunker.Enum_CSV_Access: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Zunker.Enum_CSV_Access Read = 0 : Public, Static, Literal, HasDefault
+    Zunker.Enum_CSV_Access Write = 1 : Public, Static, Literal, HasDefault
+    Zunker.Enum_CSV_Access ReadWrite = 2 : Public, Static, Literal, HasDefault

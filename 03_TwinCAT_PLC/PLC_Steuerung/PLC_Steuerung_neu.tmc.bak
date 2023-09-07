@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{18071995-0000-0000-0000-000000000042}" TcBaseType="true" CName="AmsAddr">AMSADDR</Name><BitSize>64</BitSize><SubItem><Name>netId</Name><Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type><BitSize>48</BitSize><BitOffs>0</BitOffs></SubItem><SubItem><Name>port</Name><Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type><BitSize>16</BitSize><BitOffs>48</BitOffs></SubItem><Format><Printf>%d.%d.%d.%d.%d.%d:%d</Printf><Parameter>.netId[0]</Parameter><Parameter>.netId[1]</Parameter><Parameter>.netId[2]</Parameter><Parameter>.netId[3]</Parameter><Parameter>.netId[4]</Parameter><Parameter>.netId[5]</Parameter><Parameter>.port</Parameter></Format><Format Name="Iec"><Printf>(netId:=[%d.%d.%d.%d.%d.%d], port :=%d)</Printf><Parameter>.netId[0]</Parameter><Parameter>.netId[1]</Parameter><Parameter>.netId[2]</Parameter><Parameter>.netId[3]</Parameter><Parameter>.netId[4]</Parameter><Parameter>.netId[5]</Parameter><Parameter>.port</Parameter></Format></DataType><DataType><Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name><BitSize>48</BitSize><BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType><ArrayInfo><LBound>0</LBound><Elements>6</Elements></ArrayInfo><Format><Printf>%d.%d.%d.%d.%d.%d</Printf><Parameter>[0]</Parameter><Parameter>[1]</Parameter><Parameter>[2]</Parameter><Parameter>[3]</Parameter><Parameter>[4]</Parameter><Parameter>[5]</Parameter></Format></DataType><DataType><Name GUID="{63f27fec-2796-4fcc-9b22-e4926c0ba748}">S_EK1100_Input_Prozessabbild</Name><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><Hides><Hide GUID="{cd7e1dfc-6758-4273-be2f-13dd19f56a34}" /></Hides></DataType><DataType><Name GUID="{e699756f-b1e6-4ae5-aa22-05568c63dd2b}">S_EK1100_Output_Prozessabbild</Name></DataType><DataType><Name GUID="{72853164-9417-4cc5-8e07-02f0130aa9f7}">S_EL1012_Input_Prozessabbild</Name><SubItem><Name>Input_0</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Input_1</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem></DataType><DataType><Name GUID="{9fa074d3-faf0-426a-8d57-46441f1a89cd}">S_EL1012_Output_Prozessabbild</Name></DataType><DataType><Name GUID="{a8d6de1a-3a5d-4b94-aab8-40c511299a88}">S_EL1014_Input_Prozessabbild</Name><SubItem><Name>Input_0</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Input_1</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Input_2</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Input_3</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem></DataType><DataType><Name GUID="{f00666e6-c980-43ac-b479-85020e7312e8}">S_EL1014_Output_Prozessabbild</Name></DataType><DataType><Name GUID="{1a281379-2bd3-4529-bc95-6d198ed66578}">S_EL2004_Input_Prozessabbild</Name><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem></DataType><DataType><Name GUID="{2df1ff34-7d75-44fd-a2b2-477766c91b47}">S_EL2004_Output_Prozessabbild</Name><SubItem><Name>Output_0</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Output_1</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Output_2</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>Output_3</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><Hides><Hide GUID="{8dc81717-9aa2-487e-b7d8-5308c22546bb}" /></Hides></DataType><DataType><Name GUID="{2fea36f0-b4df-42f7-964c-14d3e751976a}">S_EL2502_Input_Prozessabbild</Name><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem></DataType><DataType><Name GUID="{f644d64b-a1dd-4d17-85a5-2b0a25e01049}">S_EL2502_Output_Prozessabbild</Name><SubItem><Name>PWM_Output_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>PWM_Output_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem></DataType><DataType><Name GUID="{360de805-6772-4a27-9825-59a2b19148df}">S_EL3162_Input_Prozessabbild</Name><SubItem><Name>Status_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>Value_0</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><SubItem><Name>Status_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>Value_1</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem></DataType><DataType><Name GUID="{ce054ea7-f04f-4d95-889c-d30f575ef114}">S_EL3162_Output_Prozessabbild</Name><Hides><Hide GUID="{607c87d6-0c44-4a1f-bf67-d3688daf9112}" /></Hides></DataType><DataType><Name GUID="{05bdea43-67b2-4758-a9d6-cb82ba8a2503}">S_EL3202_Input_Prozessabbild</Name><SubItem><Name>RTD_Status_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>RTD_Value_0</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><SubItem><Name>RTD_Status_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>RTD_Value_1</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem></DataType><DataType><Name GUID="{cad4baee-33e7-4886-9683-83f2db13786f}">S_EL3202_Output_Prozessabbild</Name></DataType><DataType><Name GUID="{620ed190-f35b-48dd-abbb-fa39756c3708}">S_EL4132_Input_Prozessabbild</Name><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem><Hides><Hide GUID="{06ddd7be-a83a-433a-a05f-3963e447b433}" /></Hides></DataType><DataType><Name GUID="{8a0e9e94-dcfc-49a0-9c47-44c9b11107ff}">S_EL4132_Output_Prozessabbild</Name><SubItem><Name>Output_0</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><SubItem><Name>Output_1</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><Hides><Hide GUID="{d4370885-8998-4f40-9c74-d49fc62a14ce}" /><Hide GUID="{6353e7f9-c071-40fb-8d7d-2ac75c524030}" /></Hides></DataType><DataType><Name GUID="{c6df0d07-85df-4af1-aa5f-e371779bd734}">S_EL5151_Input_Prozessabbild</Name><SubItem><Name>Status</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>CounterValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>LatchValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>PeriodValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>Timestamp</Name><Type GUID="{18071995-0000-0000-0000-00000000000b}">ULINT</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem><Hides><Hide GUID="{03a75a51-b51f-4b49-90c6-4f92b87095f8}" /></Hides></DataType><DataType><Name GUID="{f59185a6-4351-4135-8920-f884b97e4e0a}">S_EL5151_Output_Prozessabbild</Name><SubItem><Name>Control</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>SetCounterValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><Hides><Hide GUID="{e858783b-1939-40a4-86e4-da156d4ae5df}" /></Hides></DataType><DataType><Name GUID="{47830819-8d38-47ba-b1ea-0539684a2d80}">S_EL6002_Input_Prozessabbild</Name><SubItem><Name>Status_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>DataIn_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type><ArrayInfo><LBound>0</LBound><Elements>22</Elements></ArrayInfo></SubItem><SubItem><Name>Status_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>DataIn_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type><ArrayInfo><LBound>0</LBound><Elements>22</Elements></ArrayInfo></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem><Hides><Hide GUID="{3a2234e8-d877-4f66-8a86-08ea627f689b}" /><Hide GUID="{f8460eae-1bfa-40fa-8713-6fafc42d6e52}" /><Hide GUID="{4be1ef59-ffb8-4f41-aff0-61d8aae0d9f7}" /></Hides></DataType><DataType><Name GUID="{24d70986-3012-4652-abd5-d323bcf59a52}">S_EL6002_Output_Prozessabbild</Name><SubItem><Name>Ctrl_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>DataOut_0</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type><ArrayInfo><LBound>0</LBound><Elements>22</Elements></ArrayInfo></SubItem><SubItem><Name>Ctrl_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>DataOut_1</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type><ArrayInfo><LBound>0</LBound><Elements>22</Elements></ArrayInfo></SubItem><Hides><Hide GUID="{01f5628f-bb51-4db3-9c7e-57ad56815b36}" /><Hide GUID="{7958183a-b8dc-4dc8-bc0e-c8eb3ac1d675}" /></Hides></DataType><DataType><Name GUID="{4aeb2fac-f828-4c43-991d-1b4c106196e4}">S_EL7031_Input_Prozessabbild</Name><SubItem><Name>ENC_Status</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>ENC_CounterValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>ENC_LatchValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>STM_Status</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem><SubItem><Name>Chn_0</Name><Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type></SubItem><SubItem><Name>Chn_1</Name><Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type></SubItem></DataType><DataType><Name GUID="{63e39183-5b1a-450f-9554-6ac267b8f509}">S_EL7031_Output_Prozessabbild</Name><SubItem><Name>ENC_Control</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>ENC_SetCounterValue</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>STM_Control</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>STM_Velocity</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type></SubItem><Hides><Hide GUID="{2174b606-730d-43b9-936f-562212ae841a}" /></Hides></DataType><DataType><Name GUID="{4a8512e9-957e-4eb7-b82f-e575f62e9788}">S_EL7201_Input_Prozessabbild</Name><SubItem><Name>Position</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>Statusword</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>WcState</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>InputToggle</Name><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type></SubItem><SubItem><Name>State</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>AdsAddr</Name><Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type></SubItem><SubItem><Name>Chn0</Name><Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type></SubItem><SubItem><Name>DcOutputShift</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><SubItem><Name>DcInputShift</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem></DataType><DataType><Name GUID="{8cac045c-6eb0-4a7a-b72e-bad87e579fe0}">S_EL7201_Output_Prozessabbild</Name><SubItem><Name>Controlword</Name><Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type></SubItem><SubItem><Name>TargetVelocity</Name><Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type></SubItem><Hides><Hide GUID="{502187c7-f784-46ba-b68c-599f362dd371}" /></Hides></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{87d6b531-2a42-4271-84c2-e25b371f6909}" Group="C++">
+      <Name>KM_App_Main</Name>
+      <CLSID ClassFactory="PLC_Steuerung">{87d6b531-2a42-4271-84c2-e25b371f6909}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>SO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId><Symbol><Name>EL1012_DigitalInput_Klemme</Name><BaseType GUID="{72853164-9417-4cc5-8e07-02f0130aa9f7}">S_EL1012_Input_Prozessabbild</BaseType></Symbol><Symbol><Name>EL2004_DigitalOutput_Klemme</Name><BaseType GUID="{1a281379-2bd3-4529-bc95-6d198ed66578}">S_EL2004_Input_Prozessabbild</BaseType></Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId><Symbol><Name>EL1012_DigitalInput_Klemme</Name><BaseType GUID="{9fa074d3-faf0-426a-8d57-46441f1a89cd}">S_EL1012_Output_Prozessabbild</BaseType></Symbol><Symbol><Name>EL2004_DigitalOutput_Klemme</Name><BaseType GUID="{2df1ff34-7d75-44fd-a2b2-477766c91b47}">S_EL2004_Output_Prozessabbild</BaseType></Symbol>
+        </DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+      </Deployment>
+    </Module>
+  </Modules>
+</TcModuleClass>
