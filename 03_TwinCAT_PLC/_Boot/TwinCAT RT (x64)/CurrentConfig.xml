@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcBootProject CreateTime="2023-09-07T20:56:16">
+<TcBootProject CreateTime="2023-09-08T17:37:15">
 	<System>
 		<LockedMemSize>33554432</LockedMemSize>
 		<AffinityMask>#xc0</AffinityMask>
@@ -392,7 +392,7 @@
 	<ProjectInfo>
 		<ProjectName>03_TwinCAT_PLC</ProjectName>
 		<ProjectGuid>{770F835B-5D0F-40FB-A416-C5BDE386F56B}</ProjectGuid>
-		<ConfigurationFile>C:\Users\651212006\Desktop\old\oprInvertedPendulumNew\03_TwinCAT_PLC\03_TwinCAT_PLC.tsproj</ConfigurationFile>
+		<ConfigurationFile>C:\Users\111211018\Desktop\oprInvertedPendulumNew-main\03_TwinCAT_PLC\03_TwinCAT_PLC.tsproj</ConfigurationFile>
 		<DataTypes/>
 		<PlcProjects/>
 		<Tasks/>

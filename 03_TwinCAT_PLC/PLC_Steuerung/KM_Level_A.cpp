@@ -125,7 +125,12 @@ C_KM_Level_A::C_KM_Level_A(C_KM_GlobalObjects* KM_GlobalObjects)
 
     this->motorDesPos = 0;
 
+    //Swing up
     this->swingUpActive = false;
+    this->careful = false;
+
+    this->impulse = 0.0;
+
 
     this->encoderRadsSpeed = 0;
 
@@ -133,7 +138,7 @@ C_KM_Level_A::C_KM_Level_A(C_KM_GlobalObjects* KM_GlobalObjects)
 
     this->angleController = PIDController(3, 0, 100, 0.001, 0, 0);
 
-    this->positionController = PIDController(0.005, 0, 0.6, 0.001, 0, 0);
+    this->positionController = PIDController(0.0035, 0, 0.55, 0.001, 0, 0);
 
     this->resolverPositionController = PIDController(4,0,0,0.001,0,0);
 
@@ -291,7 +296,7 @@ Boolean        C_KM_Level_A::SM_Thread_1(void)
 
     static long deflectionCount = 0;
 
-    if (lastPendulumDeflectionRads < 0 && this->encoderRadsSpeed > 0 && deflectionCount > 100) {
+    if (lastPendulumDeflectionRads <= 0 && this->encoderRadsSpeed > 0 && deflectionCount > 100) {
         deflectionCount = 0;
         lastPendulumDeflectionRads = this->encoderRads;
     }
@@ -300,19 +305,24 @@ Boolean        C_KM_Level_A::SM_Thread_1(void)
         deflectionCount = 0;
     }
     deflectionCount++;
-    float impluse = 8;
-    bool careful = absLocal(lastPendulumDeflectionRads) < PI / 3;
-    if (careful) {
-        impluse = 0.05;
+    this->careful = absLocal(lastPendulumDeflectionRads) < PI / 4;
+
+    if (this->careful) {
+        this->impulse = 4.5;
+    }
+    else {
+        this->impulse = 15.0;
     }
     static int state = 0;
     if (this->swingUpActive) {
-        if (state == 0 && lastPendulumDeflectionRads > 0 && this->encoderRads > (lastPendulumDeflectionRads + (PI - lastPendulumDeflectionRads) * 0.2)) {
-            motorDesPos -= impluse;
+        //meaning of the contionions of the following two ifs:
+        // left swing or right swing | right phase of the swing | betweem maximum and stable equilibrium with scaling factor denoting which Point exactly (0 = maximum, 1 = equilibrium)
+        if (state == 0 && lastPendulumDeflectionRads > 0 && this->encoderRads > (lastPendulumDeflectionRads + (PI - lastPendulumDeflectionRads) * 0.05)) {
+            motorDesPos -= this->impulse;
             state++;
         }
-        if (state == 1 && lastPendulumDeflectionRads < 0 && this->encoderRads < (lastPendulumDeflectionRads - (-PI - lastPendulumDeflectionRads) * 0.2)) {
-            motorDesPos += impluse;
+        if (state == 1 && lastPendulumDeflectionRads < 0 && this->encoderRads < (lastPendulumDeflectionRads - absLocal(-PI - lastPendulumDeflectionRads) * 0.05)) {
+            motorDesPos += this->impulse;
             state = 0;
         }
     }
@@ -347,7 +357,15 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
     static long motorStartCount = 0;
     // btn 0 down
     if (btn0StateNew && !btn0State) {
-        if (!this->ServoMotor->IsServoMotorEnabled() && resetted) {
+        if (!this->ServoMotor->IsServoMotorEnabled()) {
+            // reset
+            this->correctedCounter = 0;
+            this->motorSetAcc = 0;
+            this->motorDesPos = 0;
+            this->motorVel = 0;
+            this->motorResolverOffset = this->ServoMotor->GetResolverValue();
+            resetted = true;
+            // start motor
             this->ServoMotor->EnableServoMotor();
             this->motorResolverOffset = this->ServoMotor->GetResolverValue();
             this->angleController.reset();
@@ -362,29 +380,38 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
     if (guiCount - motorStartCount < 500) {
         this->motorDesPos = this->motorPos;
     }
-    // btn 1 down
-    if (btn1StateNew && !btn1State) { // aufschwingen
-        this->motorDesPos += 2;
+
+    // btn 1 down (broken)
+    if (btn1StateNew && !btn1State) {
+        
     }
+
     // btn 2 down
     if (btn2StateNew && !btn2State) {
         this->motorDesPos -= 2;
     }
-    if (btn2State && btn1State) { // btn1 and 2
-        swingUpActive = true;
+    if (btn3StateNew && !btn3State) { 
+        this->motorDesPos += 2;
     }
-    // btn 3 down
-    if (btn3StateNew && !btn3State) {
-        if (!this->ServoMotor->IsServoMotorEnabled()) {
-            motorSpeed = 0;
-            this->correctedCounter = 0;
-            this->motorSetAcc = 0;
-            this->motorDesPos = 0;
-            this->motorVel = 0;
-            this->motorResolverOffset = this->ServoMotor->GetResolverValue();
-            resetted = true;
-        }
-    }
+
+    // btn 3 and 2 down
+     if (btn2StateNew && btn3StateNew && !swingUpActive) {
+         //this->impulse = 15.0;
+         //this->careful = false;
+         swingUpActive = true;
+         this->motorDesPos -= 7.5;
+     }
+    //if (btn3StateNew && !btn3State) {
+    //    if (!this->ServoMotor->IsServoMotorEnabled()) {
+    //        motorSpeed = 0;
+    //        this->correctedCounter = 0;
+    //        this->motorSetAcc = 0;
+    //        this->motorDesPos = 0;
+    //        this->motorVel = 0;
+    //        this->motorResolverOffset = this->ServoMotor->GetResolverValue();
+    //        resetted = true;
+    //    }
+    //}
 
     this->Lineargeber->GetCounterValue();
 
@@ -416,39 +443,43 @@ Boolean        C_KM_Level_A::SM_Thread_2(void)
     return (false);
 }
 
-// Logic
+// Logic for (de)activation of angle and position controller
 Boolean        C_KM_Level_A::SM_Thread_3(void)
 {
-    float maxControllAngle = PI / 10.0;
+    float maxControllAngle = PI / 8.0;
     if (!this->enablePID) {
         maxControllAngle = PI / 20.0;
     }
     if (this->swingUpActive) {
-        maxControllAngle = PI / 10;
+        maxControllAngle = PI / 16.0;
     }
     if(encoderRads < maxControllAngle && encoderRads > -maxControllAngle) {
         startPID();
+        this->Led_3->SetDigitalOut();
+        //this->careful = false;
+        this->swingUpActive = false;
     } else {
         stopPID();
+        this->Led_3->ResetDigitalOut();
      }
     if (!this->ServoMotor->IsServoMotorEnabled()) {
         stopPID();
     }
     if (this->InduktivSensor_rechts->GetDigitalIn() || this->InduktivSensor_links->GetDigitalIn()) {
         stopPID();
-        this->motorDesPos = this->motorPos;
     }
     
     
     return (false);
 }
-// pid
+// pid updating
 Boolean        C_KM_Level_A::SM_Thread_4(void)
 {
     if (this->enablePID) {
-        float maxCommandAngle = 0.1;
+        float maxCommandAngle = PI / 12.0;
         this->positionController.setSetpoint(this->motorDesPos);
         double desAngle = this->positionController.update(this->motorPos);
+        desAngle = desAngle * (absLocal(tanLocal(this->encoderRads)) + 1);
         if (desAngle > maxCommandAngle) desAngle = maxCommandAngle;
         if (desAngle < -maxCommandAngle) desAngle = -maxCommandAngle;
         this->angleController.setSetpoint(-desAngle);

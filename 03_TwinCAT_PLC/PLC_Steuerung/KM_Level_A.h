@@ -205,6 +205,9 @@ namespace Zunker
         float motorResolverOffset;
 
         bool swingUpActive;
+        float impulse;
+        bool careful;
+
 
 
         /**************************************************** Öffentliche Anwender-Attribute ********************************************************/
